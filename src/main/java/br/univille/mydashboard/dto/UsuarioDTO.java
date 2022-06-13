@@ -1,34 +1,20 @@
-package br.univille.mydashboard.entity;
+package br.univille.mydashboard.dto;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import org.springframework.format.annotation.DateTimeFormat;
 
-@Entity
-public class Usuario {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class UsuarioDTO {
     private long id;
     private String nome;
     private String email;
     private String sexo;
     private String telefone;
-    @Temporal(value = TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date nascimento;
-
+    
     public long getId() {
         return id;
-    }
-    public String getTelefone() {
-        return telefone;
-    }
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
     }
     public void setId(long id) {
         this.id = id;
@@ -51,12 +37,17 @@ public class Usuario {
     public void setSexo(String sexo) {
         this.sexo = sexo;
     }
+    public String getTelefone() {
+        return telefone;
+    }
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
     public Date getNascimento() {
         return nascimento;
     }
     public void setNascimento(Date nascimento) {
         this.nascimento = nascimento;
     }
-
     
 }
