@@ -1,11 +1,15 @@
 package br.univille.mydashboard.entity;
 
 
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
 
 @Entity
 public class Tickets {
@@ -18,7 +22,15 @@ public class Tickets {
     @Column(length = 2000)
     private String descricao;
 
+    @OneToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH})
+    private Usuario usuario;
     
+    public Usuario getUsuario() {
+        return usuario;
+    }
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
     public long getId() {
         return id;
     }

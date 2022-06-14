@@ -28,12 +28,12 @@ public class Staff extends Usuario{
     private int AWaprover;
     private int TicketChief;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "Staff_id")
+    @OneToMany(cascade = {CascadeType.MERGE,CascadeType.REFRESH})
+    @JoinColumn(name = "Staff_id", referencedColumnName = "id")
     private List<Tickets> listadeTickets = new ArrayList<>();
     
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "Staff_id")
+    @OneToMany(cascade = {CascadeType.MERGE,CascadeType.REFRESH})
+    @JoinColumn(name = "Staff_id", referencedColumnName = "id")
     private List<Allowlist> listadeAL = new ArrayList<>();
 
     public int getAWaprover() {
