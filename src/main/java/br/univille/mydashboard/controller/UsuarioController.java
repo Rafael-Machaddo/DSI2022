@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -33,6 +34,19 @@ public class UsuarioController {
     @PostMapping(params = "form")
     public ModelAndView save(UsuarioDTO usuario){
         service.save(usuario);
+        return new ModelAndView("redirect:/usuario");
+    }
+
+    @GetMapping("/alterar/{id}")
+    public ModelAndView alterar(@PathVariable long id){
+        UsuarioDTO usuario = service.findByID(id);
+
+        return new ModelAndView("usuario/form","usuario",usuario);
+    }
+
+    @GetMapping("/delete/{id}")
+    public ModelAndView delete(@PathVariable long id){
+        service.delete(id);
         return new ModelAndView("redirect:/usuario");
     }
 }

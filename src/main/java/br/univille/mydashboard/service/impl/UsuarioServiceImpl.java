@@ -1,6 +1,7 @@
 package br.univille.mydashboard.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,22 @@ public class UsuarioServiceImpl implements UsuarioService{
         Usuario usuarioentity = mapper.mapUsuarioDTO(usuario);
         repository.save(usuarioentity);
         return mapper.mapUsuario(usuarioentity);
+    }
+
+    @Override
+    public UsuarioDTO findByID(long id) {
+        Optional<Usuario> usuario = repository.findById(id);
+        if(usuario.isPresent()){
+            Usuario usuarioentity = usuario.get();
+            return mapper.mapUsuario(usuarioentity);
+        }
+        return new UsuarioDTO();
+    }
+
+    @Override
+    public void delete(long id) {
+        repository.deleteById(id);
+        
     }
 
 }

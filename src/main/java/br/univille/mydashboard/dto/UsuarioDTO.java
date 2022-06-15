@@ -10,7 +10,7 @@ public class UsuarioDTO {
     private String email;
     private String sexo;
     private String telefone;
-    @DateTimeFormat(pattern = "yyyy-mm-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date nascimento;
     
     public long getId() {

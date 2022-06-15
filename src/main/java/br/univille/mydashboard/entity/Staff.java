@@ -15,7 +15,7 @@ import javax.persistence.OneToMany;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public class Staff extends Usuario{
+public class Staff{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
