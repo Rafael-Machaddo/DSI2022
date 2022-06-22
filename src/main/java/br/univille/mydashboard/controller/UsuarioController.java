@@ -34,7 +34,7 @@ public class UsuarioController {
     @PostMapping(params = "form")
     public ModelAndView save(UsuarioDTO usuario){
         service.save(usuario);
-        return new ModelAndView("redirect:/usuario");
+        return new ModelAndView("redirect:/home");
     }
 
     @GetMapping("/alterar/{id}")
@@ -48,5 +48,5 @@ public class UsuarioController {
     public ModelAndView delete(@PathVariable long id){
         service.delete(id);
         return new ModelAndView("redirect:/usuario");
-    }
+}
 }
