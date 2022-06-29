@@ -48,5 +48,5 @@ public class UsuarioController {
     public ModelAndView delete(@PathVariable long id){
         service.delete(id);
         return new ModelAndView("redirect:/usuario");
-}
+    }
 }
