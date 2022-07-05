@@ -1,37 +1,47 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html xmlns:th="http://www.thymeleaf.org">
 
-<head th:include="layout :: htmlhead"></head>
+      <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+        <title>Login - MyDashboard</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous" />
+        <link rel="stylesheet" th:href="@{/site.css}" />
+    </head>
 <body>
-    <nav th:replace="layout :: menu">(menu)</nav>
-    <div class="container" >
-      <img src="https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-Image.png" height="200" >
+    <p></p>
+    <div class="container-fluid text-center" >
+      <img class="img-fluid" src="https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-Image.png" >
   </div>
-    <div class="container" >
-        <form th:action="@{(form)}" th:object="${form}" method="dialog">
-
-          <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Email</label>
-          </div>
-          <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Senha">
-            <label for="floatingPassword">Senha</label>
-          </div>
-        </form>
-        <div class="form-check">
+  <p></p>
+    <div class="container-fluid2 text-center" >
+      <div class="border border-secondary p-3 rounded">
+        <p>Login para MyDashboard</p>
+        <p>
+            <input type="email" name="email" class="form-control" placeholder="E-mail" required autofocus/>
+        </p>
+        <p>
+            <input type="password" name="password" class="form-control" placeholder="Senha" required />
+        </p>
+        <div class="form-check text-center">
           <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
           <label class="form-check-label" for="flexCheckDefault">
             Não Lembrar
           </label>
         </div>
-        <div class="form-check">
+        <div class="form-check text-center">
           <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
           <label class="form-check-label" for="flexCheckChecked">
             Lembrar de mim
           </label>
         </div>
+        <p></p>
+        <p>
+          <a th:href="@{/usuario/novo}" class="btn btn-large btn-success">Cadastre-se</a>
+        </p>
+        <p></p>
         <input type="submit" class="btn btn-secondary" onClick="myFunction()"/> 
         <script>
           function myFunction() {
@@ -39,7 +49,6 @@
           }
         </script>
     </div>
-
     <div th:include="layout :: footer">(footer)</div>
 
 
