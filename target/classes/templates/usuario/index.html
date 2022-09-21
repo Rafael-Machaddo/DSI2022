@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head th:include="layout :: htmlhead"></head>
+<body>
+    <nav th:replace="layout :: menu">(menu)</nav>
+
+    <div class="container" >
+        <p></p>
+        <h1> Abaixo Você ira encontrar suas informações! </h1>
+        <p></p>
+        <table class="table" id="usuarios">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Sexo</th>
+                    <th>Telefone</th>
+                    <th>Data Nascimento</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="umUsuario : ${listaUsuarios}">
+                    <td th:text="${umUsuario.id}"></td>
+                    <td th:text="${umUsuario.nome}"></td>
+                    <td th:text="${umUsuario.email}"></td>
+                    <td th:text="${umUsuario.sexo}"></td>
+                    <td th:text="${umUsuario.telefone}"></td>
+                    <td th:text="${umUsuario.nascimento}"></td>
+                    <td><a th:href="@{'/usuario/alterar/' + ${umUsuario.id}}"
+                        class="btn btn-primary">Alterar</a> 
+                        <button class="btn btn-danger js-delete"
+                        th:data-id="${umUsuario.id}">
+                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                        Excluir
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div th:include="layout :: footer">(footer)</div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#usuarios").on('click',".js-delete",function(){
+                let button = $(this);
+                bootbox.confirm("Confirma a exclusão do registro?",
+                function(result){
+                    if(result){
+                        $.ajax({
+                            url:'usuario/delete/' + button.attr("data-id"),
+                            method: "GET",
+                            success : function(){
+                                window.location.href = "/usuario/";
+                            }
+                        })
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
