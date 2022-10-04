@@ -8,8 +8,8 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-10-03T23:37:58-0300",
-    comments = "version: 1.4.2.Final, compiler: Eclipse JDT (IDE) 1.4.200.v20220802-0458, environment: Java 17.0.4.1 (Eclipse Adoptium)"
+    date = "2022-10-04T19:19:27-0300",
+    comments = "version: 1.4.2.Final, compiler: Eclipse JDT (IDE) 1.4.200.v20220719-0747, environment: Java 17.0.4 (Eclipse Adoptium)"
 )
 public class AllowlistMapperImpl implements AllowlistMapper {
 
@@ -52,10 +52,10 @@ public class AllowlistMapperImpl implements AllowlistMapper {
         allowlistDTO.setFormulario2( allowlist.getFormulario2() );
         allowlistDTO.setFormulario3( allowlist.getFormulario3() );
         allowlistDTO.setFormulario4( allowlist.getFormulario4() );
+        allowlistDTO.setUsuario( allowlist.getUsuario() );
         allowlistDTO.setId( allowlist.getId() );
         allowlistDTO.setNome( allowlist.getNome() );
         allowlistDTO.setTelefone( allowlist.getTelefone() );
-        allowlistDTO.setUsuario( allowlist.getUsuario() );
 
         return allowlistDTO;
     }
@@ -72,10 +72,10 @@ public class AllowlistMapperImpl implements AllowlistMapper {
         allowlist1.setFormulario2( allowlist.getFormulario2() );
         allowlist1.setFormulario3( allowlist.getFormulario3() );
         allowlist1.setFormulario4( allowlist.getFormulario4() );
+        allowlist1.setUsuario( allowlist.getUsuario() );
         allowlist1.setId( allowlist.getId() );
         allowlist1.setNome( allowlist.getNome() );
         allowlist1.setTelefone( allowlist.getTelefone() );
-        allowlist1.setUsuario( allowlist.getUsuario() );
 
         return allowlist1;
     }

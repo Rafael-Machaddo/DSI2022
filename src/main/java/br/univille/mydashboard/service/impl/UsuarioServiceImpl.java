@@ -22,15 +22,15 @@ public class UsuarioServiceImpl implements UsuarioService{
             = Mappers.getMapper(UsuarioMapper.class); 
 
     @Override
-    public List<UsuarioDTO> getAll() {
-        return mapper.mapUsuario(repository.findAll());
-    }
-
-    @Override
     public UsuarioDTO save(UsuarioDTO usuario) {
         Usuario usuarioentity = mapper.mapUsuarioDTO(usuario);
         repository.save(usuarioentity);
         return mapper.mapUsuario(usuarioentity);
+    }
+
+    @Override
+    public List<UsuarioDTO> getAll() {
+        return mapper.mapUsuario(repository.findAll());
     }
 
     @Override

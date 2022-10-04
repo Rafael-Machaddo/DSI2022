@@ -7,11 +7,11 @@ body {
 }
 .img-fluid {
     margin: 0 auto;
-    height: 200px;
+    height: 100px;
 }
 .img-fluid2 {
     margin: 0 auto;
-    max-width: 500px; margin: 0 auto
+    max-width: 400px; margin: 0 auto
 }
 table {
     background-color: rgb(212, 212, 212);
@@ -25,5 +25,8 @@ table {
     -webkit-box-orient: vertical;
 }
 h1 {
+    text-align: center;
+}
+h2 {
     text-align: center;
 }

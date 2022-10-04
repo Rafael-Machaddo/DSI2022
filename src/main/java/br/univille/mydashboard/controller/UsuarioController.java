@@ -49,4 +49,10 @@ public class UsuarioController {
         service.delete(id);
         return new ModelAndView("redirect:/usuario");
     }
+    
+    @RequestMapping("/login.html")
+    public String login() {
+      return "login.html";
+    }
 }
+

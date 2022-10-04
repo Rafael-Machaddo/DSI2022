@@ -4,9 +4,8 @@
 
 <head th:include="layout :: htmlhead"></head>
 <body>
-    <nav th:replace="layout :: menu">(menu)</nav>
     <div class="container" >
-        <form th:action="@{(form)}" th:object="${allowlist}" method="GET">
+        <form th:action="@{/allowlist/(form)}" th:object="${allowlist}" method="POST">
 
             <input type="hidden" th:field="*{id}">
 

@@ -8,8 +8,8 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-10-03T23:03:04-0300",
-    comments = "version: 1.4.2.Final, compiler: Eclipse JDT (IDE) 1.4.200.v20220802-0458, environment: Java 17.0.4.1 (Eclipse Adoptium)"
+    date = "2022-10-04T19:19:26-0300",
+    comments = "version: 1.4.2.Final, compiler: Eclipse JDT (IDE) 1.4.200.v20220719-0747, environment: Java 17.0.4 (Eclipse Adoptium)"
 )
 public class UsuarioMapperImpl implements UsuarioMapper {
 
@@ -49,13 +49,13 @@ public class UsuarioMapperImpl implements UsuarioMapper {
 
         UsuarioDTO usuarioDTO = new UsuarioDTO();
 
-        usuarioDTO.setEmail( usuario.getEmail() );
         usuarioDTO.setId( usuario.getId() );
-        usuarioDTO.setNascimento( usuario.getNascimento() );
         usuarioDTO.setNome( usuario.getNome() );
-        usuarioDTO.setSenha( usuario.getSenha() );
+        usuarioDTO.setEmail( usuario.getEmail() );
         usuarioDTO.setSexo( usuario.getSexo() );
         usuarioDTO.setTelefone( usuario.getTelefone() );
+        usuarioDTO.setNascimento( usuario.getNascimento() );
+        usuarioDTO.setSenha( usuario.getSenha() );
 
         return usuarioDTO;
     }
@@ -68,13 +68,13 @@ public class UsuarioMapperImpl implements UsuarioMapper {
 
         Usuario usuario1 = new Usuario();
 
-        usuario1.setEmail( usuario.getEmail() );
-        usuario1.setId( usuario.getId() );
-        usuario1.setNascimento( usuario.getNascimento() );
-        usuario1.setNome( usuario.getNome() );
-        usuario1.setSenha( usuario.getSenha() );
-        usuario1.setSexo( usuario.getSexo() );
         usuario1.setTelefone( usuario.getTelefone() );
+        usuario1.setId( usuario.getId() );
+        usuario1.setNome( usuario.getNome() );
+        usuario1.setEmail( usuario.getEmail() );
+        usuario1.setSexo( usuario.getSexo() );
+        usuario1.setNascimento( usuario.getNascimento() );
+        usuario1.setSenha( usuario.getSenha() );
 
         return usuario1;
     }

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -35,4 +36,10 @@ public class AllowlistController {
         service.save(allowlist);
         return new ModelAndView("redirect:/home");
     }
+    @GetMapping("/delete/{id}")
+    public ModelAndView delete(@PathVariable long id){
+        service.delete(id);
+        return new ModelAndView("redirect:/allowlist");
+    }
+    
 }
