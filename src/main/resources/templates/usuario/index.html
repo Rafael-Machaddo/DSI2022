@@ -9,6 +9,8 @@
     <div class="container" >
         <p></p>
         <h1> Abaixo Você ira encontrar suas informações! </h1>
+        <h2> Olá! 
+        </h2>
         <p></p>
         <table class="table" id="usuarios">
             <thead>
@@ -16,6 +18,7 @@
                     <th>ID</th>
                     <th>Nome</th>
                     <th>E-mail</th>
+                    <th>Senha</th>
                     <th>Sexo</th>
                     <th>Telefone</th>
                     <th>Data Nascimento</th>
@@ -27,6 +30,7 @@
                     <td th:text="${umUsuario.id}"></td>
                     <td th:text="${umUsuario.nome}"></td>
                     <td th:text="${umUsuario.email}"></td>
+                    <td th:text="${umUsuario.senha}"></td>
                     <td th:text="${umUsuario.sexo}"></td>
                     <td th:text="${umUsuario.telefone}"></td>
                     <td th:text="${umUsuario.nascimento}"></td>
@@ -51,7 +55,7 @@
                 function(result){
                     if(result){
                         $.ajax({
-                            url:'usuario/delete/' + button.attr("data-id"),
+                            url:'delete/' + button.attr("data-id"),
                             method: "GET",
                             success : function(){
                                 window.location.href = "/usuario/";

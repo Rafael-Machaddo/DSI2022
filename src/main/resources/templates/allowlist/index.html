@@ -8,36 +8,32 @@
 
     <div class="container" >
         <p></p>
-        <h1> Abaixo Você ira encontrar suas informações! </h1>
-        <h2> Olá! 
-        </h2>
+        <h1> Allowlists! </h1>
         <p></p>
-        <table class="table" id="usuarios">
+        <table class="table" id="Allowlists">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Nome</th>
-                    <th>E-mail</th>
-                    <th>Senha</th>
-                    <th>Sexo</th>
                     <th>Telefone</th>
-                    <th>Data Nascimento</th>
-                    <th></th>
+                    <th>Pergunta1</th>
+                    <th>Pergunta2</th>
+                    <th>Pergunta3</th>
+                    <th>Pergunta4</th>
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="umUsuario : ${listaUsuarios}">
-                    <td th:text="${umUsuario.id}"></td>
-                    <td th:text="${umUsuario.nome}"></td>
-                    <td th:text="${umUsuario.email}"></td>
-                    <td th:text="${umUsuario.senha}"></td>
-                    <td th:text="${umUsuario.sexo}"></td>
-                    <td th:text="${umUsuario.telefone}"></td>
-                    <td th:text="${umUsuario.nascimento}"></td>
-                    <td><a th:href="@{'/usuario/alterar/' + ${umUsuario.id}}"
-                        class="btn btn-primary">Alterar</a> 
+                <tr th:each="umAL : ${listadeAL}">
+                    <td th:text="${umAL.id}"></td>
+                    <td th:text="${umAL.nome}"></td>
+                    <td th:text="${umAL.telefone}"></td>
+                    <td th:text="${umAL.formulario1}"></td>
+                    <td th:text="${umAL.formulario2}"></td>
+                    <td th:text="${umAL.formulario3}"></td>
+                    <td th:text="${umAL.formulario4}"></td>
+                    <td> 
                         <button class="btn btn-danger js-delete"
-                        th:data-id="${umUsuario.id}">
+                        th:data-id="${umAL.id}">
                         <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                         Excluir
                         </button>
@@ -58,7 +54,7 @@
                             url:'delete/' + button.attr("data-id"),
                             method: "GET",
                             success : function(){
-                                window.location.href = "/usuario/";
+                                window.location.href = "/allowlist/";
                             }
                         })
                     }

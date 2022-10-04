@@ -8,6 +8,7 @@ public class UsuarioDTO {
     private long id;
     private String nome;
     private String email;
+    private String senha;
     private String sexo;
     private String telefone;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -49,5 +50,10 @@ public class UsuarioDTO {
     public void setNascimento(Date nascimento) {
         this.nascimento = nascimento;
     }
-    
+    public String getSenha() {
+        return senha;
+    }
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 }

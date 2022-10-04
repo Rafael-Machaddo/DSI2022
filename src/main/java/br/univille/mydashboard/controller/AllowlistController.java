@@ -1,6 +1,6 @@
 package br.univille.mydashboard.controller;
 
-//import java.util.List;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +18,12 @@ public class AllowlistController {
     
     @Autowired
     private AllowlistService service;
+
+    @GetMapping
+    public ModelAndView index(){
+        List<AllowlistDTO> listadeAL = service.getAll();
+        return new ModelAndView("allowlist/index","listadeAL", listadeAL);
+    }
 
     @GetMapping("/nova")
     public ModelAndView nova(){

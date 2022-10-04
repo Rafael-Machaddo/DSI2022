@@ -1,8 +1,6 @@
 package br.univille.mydashboard.service.impl;
 
-//import java.util.List;
-//import java.util.Optional;
-
+import java.util.List;
 import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,6 +24,11 @@ public class AllowlistServiceImpl implements AllowlistService{
         Allowlist allowlistentity = mapper.mapAllowlistDTO(allowlist);
         repository.save(allowlistentity);
         return mapper.mapAllowlist(allowlistentity);
+    }
+
+    @Override
+    public List<AllowlistDTO> getAll() {
+        return mapper.mapAllowlist(repository.findAll());
     }
 
 }
