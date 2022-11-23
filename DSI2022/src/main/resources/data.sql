@@ -1,0 +1,1 @@
+insert ignore into USUARIO(id,email,nascimento,nome,senha,sexo,telefone) values(1,'admin',null,'','admin','','');
