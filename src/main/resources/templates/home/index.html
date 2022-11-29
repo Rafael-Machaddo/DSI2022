@@ -7,7 +7,7 @@
     <nav th:replace="layout :: menu">(menu)</nav>
     <div class="container-fluid text-center" >
         <p></p>
-    <h1>Bem Vindo(a) ao nosso painel!</h1>
+    <h1>Bem Vindo(a) ao nosso painel Administrativo!</h1>
         <p></p>
     </div>
 
@@ -16,8 +16,46 @@
         <p></p>
     </div>
     <div>
-        <h2> Aqui você pode acompanhar sua Allowlist, e abrir tickets!</h2>
+        <h2> Aqui você pode cadastrar Usuarios, Allowlists e consulta-los!</h2>
     </div>
 
+    <div class="row">
+        <div class="card-container">
+          <div class="card mx-auto">
+            <div class="card-body">
+              <h5 class="card-title text-center">Allowlists!</h5>
+              <p class="card-text">Consulte a Allowlist de cada usuario do servidor!</p>
+              <a href="/allowlist/" class="btn btn-primary container-fluid">Allowlists!</a>
+            </div>
+          </div>
+        </div>
+        <div class="card-container">
+            <div class="card mx-auto">
+              <div class="card-body">
+              <h5 class="card-title text-center">Usuarios!</h5>
+              <p class="card-text text-center">Consulte o cadastro de cada usuário do servidor!</p>
+              <a href="/usuario/" class="btn btn-primary container-fluid">Usuarios!</a>
+            </div>
+          </div>
+          <div class="card-container">
+            <div class="card mx-auto">
+              <div class="card-body">
+              <h5 class="card-title text-center">Novo Usuario!</h5>
+              <p class="card-text">Cadastre um novo usuário no servidor!</p>
+              <a href="/usuario/novo" class="btn btn-primary container-fluid">Criar Novo Usuario</a>
+            </div>
+          </div>
+          <div class="card-container">
+            <div class="card mx-auto">
+              <div class="card-body">
+              <h5 class="card-title text-center">Nova Allowlist!</h5>
+              <p class="card-text">Cadastre uma nova Allowlist no servidor!</p>
+              <a href="/allowlist/nova" class="btn btn-primary container-fluid">Criar Nova Allowlist</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
 </body>
+
 </html>

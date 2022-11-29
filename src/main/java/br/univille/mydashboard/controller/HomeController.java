@@ -15,4 +15,9 @@ public class HomeController {
         return new 
         ModelAndView("home/index");
     }
+    @GetMapping("/login")
+	public String showLoginPage() {
+			return "/login";
+		}
+	
 }

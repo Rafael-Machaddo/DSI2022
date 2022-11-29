@@ -3,42 +3,51 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 <head th:include="layout :: htmlhead"></head>
-<body>
-    <div class="container" >
+<body> 
+    <P></P>
+    <h1>Preencha os Campos solicitados!</h1>
+    <div class="container text-center" >
         <form th:action="@{/allowlist/(form)}" th:object="${allowlist}" method="POST">
 
             <input type="hidden" th:field="*{id}">
-
+            <P></P>
             <div class="form-group">
                 <label for="txtnome">Nome</label>
                 <input type="text" class="form-control"
                 id="txtnome" th:field="*{nome}">
             </div>
+            <p></p>
             <div class="form-group">
                 <label for="txttelefone">Telefone</label>
                 <input type="text" class="form-control"
                 id="txttelefone" th:field="*{telefone}">
             </div>
+            <p></p>
             <div class="form-group">
                 <label for="txtformulario1">Qual seu ID? (apresentado no jogo)</label>
                 <input type="text" class="form-control"
                 id="txtformulario1" th:field="*{formulario1}">
             </div>
+            <p></p>
             <div class="form-group">
                 <label for="txtformulario2">Qual o nome do seu personagem?</label>
                 <input type="text" class="form-control"
                 id="txtformulario2" th:field="*{formulario2}">
             </div>
+            <p></p>
             <div class="form-group">
                 <label for="txtformulario3">Qual a idade do seu personagem?</label>
                 <input type="text" class="form-control"
                 id="txtformulario3" th:field="*{formulario3}">
             </div>
+            <p></p>
             <div class="form-group">
                 <label for="txtformulario4">Você esta ciente das regras do servidor?</label>
                 <input type="text" class="form-control"
-                id="txtformulario4" th:field="*{formulario4}">                
-                <input type="submit" class="btn btn-secondary">
+                id="txtformulario4" th:field="*{formulario4}">            
+                <p></p>    
+                <input type="submit" class="btn btn-secondary container-fluid">
+                
             </div>
         </form>
 
@@ -48,4 +57,19 @@
 
 
 </body>
+<style>
+    .container {
+        width: 400px;
+        height: 550px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -300px;
+        margin-left: -218px;
+        border-style:none;
+        background-color: grey;
+        border-radius: 10px;
+}
+
+</style>
 </html>

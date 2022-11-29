@@ -24,7 +24,7 @@ public class SecurityConfigurer
         .and()
         .authorizeRequests().antMatchers("/**").authenticated().and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.ALWAYS)
         .and()
-        .formLogin().permitAll().defaultSuccessUrl("/", true)
+        .formLogin().loginPage("/login").permitAll().defaultSuccessUrl("/", true)
         .and().logout().permitAll();
          
     }

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+        <title>Login - MyDashboard</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous" />
+        <link rel="stylesheet" th:href="@{/site.css}" />
+    </head>
+<body>
+    <p></p>
+	<form th:action="@{/login}" method="post"
+		style="max-width: 400px; margin: 5% auto;">
+		<div class="container py-5 h-100 ">
+            <div class="card-body p-5 text-center">
+            <img class="img-fluid3" src="https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-Image.png" >
+			<h1>Login  MyDashboard</h1>
+			<div class="form-floating mb-3 mt-3 text-left">
+				<label for="username">Email:</label> 
+				<input type="text" class="form-control" placeholder="Digite seu email" id="username"
+					name="username">
+			</div>
+			<div class="form-floating mb-3 mt-3 text-left">
+				<label for="pwd">Senha:</label> 
+				<input type="password" class="form-control" placeholder="Digite sua senha" id="password"
+					name="password">
+			</div>
+            <p></p>
+            <div class="form-check text-center">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                <label class="form-check-label" for="flexCheckChecked">
+                  Lembrar de mim
+                </label>
+              </div>
+              <p></p>
+			<button type="submit" class="btn btn-primary container-fluid">Logar</button>
+        </div>
+		</div>
+	</form>
+</body>
+<style>
+.img-fluid3 {
+    margin: 0 10%;
+    max-width: 200px;
+    border-radius:10px;
+}
+</style>
+</html>

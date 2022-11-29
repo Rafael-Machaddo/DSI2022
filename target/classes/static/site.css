@@ -3,15 +3,19 @@ body {
 }
 .container-fluid2 {
     background-color: rgb(212, 212, 212);
-    max-width: 500px; margin: 0 auto
+    max-width: 500px; margin: 0 auto;
+    border-radius: 10px;
 }
 .img-fluid {
     margin: 0 auto;
     height: 100px;
+    border-radius: 10px;
+    align-content: center;
 }
 .img-fluid2 {
     margin: 0 auto;
-    max-width: 400px; margin: 0 auto
+    max-width: 400px; margin: 0 auto;
+    border-radius:10px;
 }
 table {
     background-color: rgb(212, 212, 212);
@@ -23,6 +27,7 @@ table {
     line-height: 16px; /* fallback */
     -webkit-line-clamp: 0; /* number of lines to show */
     -webkit-box-orient: vertical;
+    border-radius: 10px;
 }
 h1 {
     text-align: center;
@@ -30,3 +35,21 @@ h1 {
 h2 {
     text-align: center;
 }
+.card-container {
+    display:contents;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    border-radius: 10px;
+  }  
+  
+.card-body {
+    align-self: center;
+    background-color: grey;
+    border-radius: 10px;
+  }
+.card {
+    align-self:center;
+    background-color: #aaaaaa;
+    border-radius: 10px;
+  }
